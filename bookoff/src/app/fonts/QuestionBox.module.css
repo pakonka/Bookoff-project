@@ -1,0 +1,14 @@
+@keyframes pop-down {
+  from {
+    transform: 0;
+    display: none;
+  }
+  to {
+    transform: translateY(200px);
+    display: block;
+  }
+}
+
+.answer {
+  display: none;
+}

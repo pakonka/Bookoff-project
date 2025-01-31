@@ -1,0 +1,64 @@
+import express, { Express, NextFunction } from "express";
+import path from "path";
+import compression from "compression";
+import logMiddleware from "./middlewares/logs.middleware";
+import bannerRoutes from "./routes/v1/banner.routes";
+import categoryRoutes from "./routes/v1/category.routes";
+import publisherRoutes from "./routes/v1/publisher.routes";
+import permissionRoutes from "./routes/v1/permission.routes";
+import discountRoutes from "./routes/v1/discount.routes";
+import reviewRoutes from "./routes/v1/review.routes";
+import stockRoutes from "./routes/v1/stock.routes";
+import shippingMethodRoutes from "./routes/v1/shippingMethod.routes";
+import paymentRoutes from "./routes/v1/payment.routes";
+import orderItemRoutes from "./routes/v1/orderItem.routes";
+import orderRoutes from "./routes/v1/order.routes";
+import roleRoutes from "./routes/v1/role.routes";
+import productImageRoutes from "./routes/v1/productImage.routes";
+import wishlistRoutes from "./routes/v1/wishlist.routes";
+import cartRoutes from "./routes/v1/cart.routes";
+import userRoutes from "./routes/v1/user.routes";
+import authorRoutes from "./routes/v1/author.routes";
+import rolePermissionRoutes from "./routes/v1/rolePermission.routes";
+import productRoutes from "./routes/v1/product.routes";
+import staffRoutes from "./routes/v1/staff.routes";
+import customerRoutes from "./routes/v1/customer.routes";
+import countRoutes from "./routes/v1/count.routes";
+import productViewsRoutes from "./routes/v1/productViews.routes";
+import cors from "cors";
+
+const app: Express = express();
+app.use(cors());
+// Middleware
+app.use(logMiddleware as express.RequestHandler);
+app.use(compression());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+
+// Kết nối các route
+app.use("/api/v1/banners", bannerRoutes);
+app.use("/api/v1/categories", categoryRoutes);
+app.use("/api/v1/products", productRoutes);
+app.use("/api/v1/publishers", publisherRoutes);
+app.use("/api/v1/permissions", permissionRoutes);
+app.use("/api/v1/discounts", discountRoutes);
+app.use("/api/v1/reviews", reviewRoutes);
+app.use("/api/v1/stocks", stockRoutes);
+app.use("/api/v1/shipping-methods", shippingMethodRoutes);
+app.use("/api/v1/payments", paymentRoutes);
+app.use("/api/v1/order-items", orderItemRoutes);
+app.use("/api/v1/orders", orderRoutes);
+app.use("/api/v1/roles", roleRoutes);
+app.use("/api/v1/product-images", productImageRoutes);
+app.use("/api/v1/wishlists", wishlistRoutes);
+app.use("/api/v1/carts", cartRoutes);
+app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/staffs", staffRoutes);
+app.use("/api/v1/customers", customerRoutes);
+app.use("/api/v1/authors", authorRoutes);
+app.use("/api/v1/role-permissions", rolePermissionRoutes);
+app.use("/api/v1/counts", countRoutes);
+app.use("/api/v1/product-views", productViewsRoutes);
+
+export default app;

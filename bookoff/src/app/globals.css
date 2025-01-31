@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .border-custom {
+    @apply border-b-[1px] border-[#ededed];
+  }
+}
+
+body {
+  font-family: "Monsterrat", serif;
+  color: #333;
+}
+.truncate-lines {
+  display: -webkit-box; /* Để sử dụng 2 hàng */
+  -webkit-box-orient: vertical; /* Để chỉ định hướng cho box */
+  overflow: hidden; /* Ẩn nội dung thừa */
+  -webkit-line-clamp: 2; /* Số dòng tối đa */
+}
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(128, 128, 128, 0.5); /* Gray shadow */
+}
+.hover\:text-shadow:hover {
+  text-shadow: 0 2px 4px rgba(128, 128, 128, 0.5); /* Gray shadow on hover */
+}
+.hover-opacity {
+  @apply transition-opacity hover:opacity-70 duration-300 cursor-pointer;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%;
+  transform: translateY(-150%);
+  z-index: 99;
+  color: #003894 !important;
+}
+.swiper-pagination-bullet {
+  background-color: #003894 !important;
+}
+
+.swiper-button-next {
+  right: 15px !important;
+}
+.swiper-button-prev {
+  left: -2px !important;
+}
+
+/* Pagination Container */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 10px 0;
+}
+
+/* Pagination Page Style */
+.pagination__page,
+.pagination__break {
+  margin: 0 5px;
+  padding: 3px 9px;
+  border-radius: 100%;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 12pt;
+}
+
+/* First and Previous Page Buttons - Left */
+.first-page,
+.prev-pagination {
+  position: absolute;
+  left: 0;
+  font-size: 20pt;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.first-page {
+  margin-right: 20px; /* Khoảng cách giữa nút first và prev */
+}
+
+.prev-pagination {
+  margin-left: 20px; /* Khoảng cách giữa nút prev và first */
+}
+
+/* Next and Last Page Buttons - Right */
+.next-pagination,
+.last-page {
+  position: absolute;
+  right: 0;
+  font-size: 20pt;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.next-pagination {
+  margin-right: 20px; /* Khoảng cách giữa nút next và last */
+}
+
+.last-page {
+  margin-left: 20px; /* Khoảng cách giữa nút last và next */
+}
+
+/* Hover Effect */
+.pagination__link:hover,
+.pagination__page:hover {
+  opacity: 0.8;
+}
+
+.pagination__page {
+  color: #a4a4a4;
+  font-weight: bold;
+}
+/* Disabled State */
+/* .disabled,
+button:disabled {
+  color: #a4a4a4;
+  pointer-events: none; 
+} */
+
+.active {
+  background-color: #003894;
+  color: white;
+  font-weight: bold;
+}

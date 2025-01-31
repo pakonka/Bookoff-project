@@ -1,0 +1,15 @@
+PUT http://localhost:3000/api/v1/brands/1
+Content-Type: application/application/json
+
+{
+    "name": "Drinks"
+};
+###
+POST http://localhost:3000/api/v1/brands/create
+Content-Type: application/application/json
+
+{
+    "name": "Foods"
+};
+###
+DELETE http://localhost:3000/api/v1/brands/1

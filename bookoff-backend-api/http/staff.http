@@ -1,0 +1,21 @@
+POST http://localhost:5000/api/v1/users
+Content-Type: application/json
+
+{
+  "user_name": "USAO",
+  "email": "usao@gmail.com",
+  "password": "123456",
+  "first_name": "U",
+  "last_name": "SAO",
+  "phone": "09012315671",
+  "address": "東京都新宿区1-1-1",
+  "city": "新宿区",
+  "country": "日本",
+  "postal_code": "160-0022",
+  "gender": "male",
+  "occupation": "エンジニア",
+  "role": 2
+}
+
+####
+DELETE http://localhost:5000/api/v1/users/

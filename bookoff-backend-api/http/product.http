@@ -1,0 +1,24 @@
+POST http://localhost:3000/api/v1/products/create
+Content-Type:  application/json
+
+{
+  "product_name": "Product Name",
+  "price": 99.99,
+  "discount": 0.2,
+  "slug": "product-name",
+  "category": "66accec6dbac192747433074",
+  "brand": "66acceaaa01af3766bea9271"
+}
+
+###
+PUT http://localhost:3000/api/v1/products/66b0dad02ee4922cb1534ead
+
+Content-Type: application/json
+
+{
+  "product_name": "Updated Product Name",
+  "price": 199.99,
+}
+
+###
+DELETE http://localhost:3000/api/v1/products/66b0d294ef9665f94e7eaa04
